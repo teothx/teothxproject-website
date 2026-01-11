@@ -1,0 +1,10 @@
+{
+  "name": "TeothxProject",
+  "short_name": "Teothx",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#00C853",
+  "description": "TeothxProject landing page built with Flutter Web.",
+  "icons": []
+}
