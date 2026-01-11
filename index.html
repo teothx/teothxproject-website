@@ -3,35 +3,69 @@
 <head>
   <base href="/" />
   <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>teothxproject</title>
-  <link rel="manifest" href="manifest.json">
   <style>
-    body { margin: 0; background: #F6F3EE; }
-    .loading {
+    body { margin: 0; background: #F6F3EE; font-family: Arial, sans-serif; }
+    #loading {
       position: fixed;
       top: 50%; left: 50%;
       transform: translate(-50%, -50%);
-      font-family: Arial, sans-serif;
       font-size: 24px;
       color: #0B1F2A;
+      text-align: center;
+    }
+    #error {
+      display: none;
+      position: fixed;
+      top: 10px; left: 10px;
+      background: #ff4444;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
-  <div class="loading">Loading...</div>
+  <div id="loading">Loading...<br><small id="status"></small></div>
+  <div id="error"></div>
   <script src="flutter.js"></script>
   <script>
-    window.addEventListener('load', function() {
-      FlutterLoader.load({
-        onEntrypointLoaded: function(engineInitializer) {
-          engineInitializer.initializeEngine().then(function(appRunner) {
-            appRunner.runApp();
-          });
-        }
+    document.getElementById('status').textContent = 'Loading flutter.js...';
+  </script>
+  <script src="flutter_bootstrap.js"></script>
+  <script>
+    function updateStatus(msg) {
+      document.getElementById('status').textContent = msg;
+    }
+    
+    updateStatus('Initializing Flutter...');
+    
+    try {
+      updateStatus('Creating engine...');
+      
+      const config = {
+        entrypointBaseUrl: window.location.href.substring(0, window.location.href.lastIndexOf('/')) + '/',
+      };
+      
+      updateStatus('Loading app...');
+      
+      window.flutter_bootstrap.appToRendererEntrypoint(config).then((appRunner) => {
+        updateStatus('Running app...');
+        appRunner.runApp();
+      }).catch(function(err) {
+        document.getElementById('error').style.display = 'block';
+        document.getElementById('error').textContent = 'Error: ' + err.message;
+        document.getElementById('loading').style.display = 'none';
+        console.error('Flutter error:', err);
       });
-    });
+    } catch(err) {
+      document.getElementById('error').style.display = 'block';
+      document.getElementById('error').textContent = 'Init Error: ' + err.message;
+      document.getElementById('loading').style.display = 'none';
+      console.error('Init error:', err);
+    }
   </script>
 </body>
 </html>
