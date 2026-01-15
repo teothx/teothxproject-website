@@ -1,71 +1,178 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head>
-  <base href="/" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>teothxproject</title>
-  <style>
-    body { margin: 0; background: #F6F3EE; font-family: Arial, sans-serif; }
-    #loading {
-      position: fixed;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 24px;
-      color: #0B1F2A;
-      text-align: center;
-    }
-    #error {
-      display: none;
-      position: fixed;
-      top: 10px; left: 10px;
-      background: #ff4444;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 8px;
-      font-size: 14px;
-    }
-  </style>
+  <meta name="description" content="JulianCal - Calcola il Giorno Giuliano e genera codici lotto. Strumento essenziale per produzione e logistica.">
+  <title>JulianCal - Giorno Giuliano & Codici Lotto</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.png">
+  <script src="lang.js" defer></script>
 </head>
 <body>
-  <div id="loading">Loading...<br><small id="status"></small></div>
-  <div id="error"></div>
-  <script src="flutter.js"></script>
-  <script>
-    document.getElementById('status').textContent = 'Loading flutter.js...';
-  </script>
-  <script src="flutter_bootstrap.js"></script>
-  <script>
-    function updateStatus(msg) {
-      document.getElementById('status').textContent = msg;
-    }
-    
-    updateStatus('Initializing Flutter...');
-    
-    try {
-      updateStatus('Creating engine...');
-      
-      const config = {
-        entrypointBaseUrl: window.location.href.substring(0, window.location.href.lastIndexOf('/')) + '/',
-      };
-      
-      updateStatus('Loading app...');
-      
-      window.flutter_bootstrap.appToRendererEntrypoint(config).then((appRunner) => {
-        updateStatus('Running app...');
-        appRunner.runApp();
-      }).catch(function(err) {
-        document.getElementById('error').style.display = 'block';
-        document.getElementById('error').textContent = 'Error: ' + err.message;
-        document.getElementById('loading').style.display = 'none';
-        console.error('Flutter error:', err);
-      });
-    } catch(err) {
-      document.getElementById('error').style.display = 'block';
-      document.getElementById('error').textContent = 'Init Error: ' + err.message;
-      document.getElementById('loading').style.display = 'none';
-      console.error('Init error:', err);
-    }
-  </script>
+  <header>
+    <nav>
+      <div class="logo">teothxproject</div>
+      <ul class="nav-links">
+        <li><a href="#app">L'App</a></li>
+        <li><a href="#features">Funzionalità</a></li>
+        <li><a href="#screenshots">Screenshot</a></li>
+        <li><a href="#help">Help</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <img src="logo.png" alt="JulianCal Logo" class="app-logo">
+        <h1>JulianCal</h1>
+        <p class="tagline">Giorno Giuliano & Codici Lotto</p>
+        <p class="description">L'app definitiva per calcolare il Giorno Giuliano dell'anno. Essenziale per produzione, logistica e tracciamento lotti.</p>
+        <p class="brand">by teothxproject</p>
+        <div class="store-buttons">
+          <a href="https://apps.apple.com/app/id[APP_ID]" class="store-btn app-store" target="_blank">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+            </svg>
+            <span>Download su<br><strong>App Store</strong></span>
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.teothx.juliancal" class="store-btn play-store" target="_blank">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+              <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
+            </svg>
+            <span>Disponibile su<br><strong>Play Store</strong></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="app" class="app-info">
+      <div class="container">
+        <h2>Perché JulianCal?</h2>
+        <p class="intro">JulianCal è lo strumento indispensabile per professionisti che lavorano con date e tracciamento prodotti. Calcola instantaneamente il giorno giuliano e genera codici lotto personalizzati.</p>
+      </div>
+    </section>
+
+    <section id="features" class="features">
+      <div class="container">
+        <h2>Funzionalità</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">📅</div>
+            <h3>Giorno Giuliano in Tempo Reale</h3>
+            <p>Visualizza il giorno giuliano dell'anno (1-365/366) con aggiornamento automatico ogni minuto.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🏷️</div>
+            <h3>Codice Lotto</h3>
+            <p>Genera codici lotto automatici con prefisso personalizzato e formato a 2 o 3 cifre.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔄</div>
+            <h3>Convertitore</h3>
+            <p>Converti istantaneamente da giorno giuliano a data calendario e viceversa.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📆</div>
+            <h3>Calendario Interattivo</h3>
+            <p>Visualizza il calendario con giorno giuliano per ogni data. Seleziona qualsiasi data per i dettagli.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h3>Progresso Annuale</h3>
+            <p>Visualizza la percentuale dell'anno trascorsa con barra di progresso animata.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📈</div>
+            <h3>Statistiche Dettagliate</h3>
+            <p>Numero settimana, trimestre corrente, giorni rimanenti e Julian Day Number completo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="screenshots" class="screenshots">
+      <div class="container">
+        <h2>Screenshot</h2>
+        <div class="screenshots-grid">
+          <div class="screenshot">
+            <img src="home_resized.png" alt="JulianCal Home Screen">
+            <p>Home - Giorno Giuliano principale</p>
+          </div>
+          <div class="screenshot">
+            <img src="convertitore_resized.png" alt="JulianCal Convertitore">
+            <p>Convertitore Giorno ↔ Data</p>
+          </div>
+          <div class="screenshot">
+            <img src="calendario_resized.png" alt="JulianCal Calendario">
+            <p>Calendario Interattivo</p>
+          </div>
+          <div class="screenshot">
+            <img src="impostazioni_resized.png" alt="JulianCal Impostazioni">
+            <p>Impostazioni e Lingua</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="use-cases">
+      <div class="container">
+        <h2>A Chi è Destinata</h2>
+        <div class="use-cases-grid">
+          <div class="use-case">🏭 Produzione & Manifattura</div>
+          <div class="use-case">🚚 Logistica & Spedizioni</div>
+          <div class="use-case">🌾 Agricoltura</div>
+          <div class="use-case">📋 Project Management</div>
+          <div class="use-case">🔬 Scienza & Ricerca</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="help" class="help-section">
+      <div class="container">
+        <h2>Supporto & Help</h2>
+        <p>Hai domande o problemi con JulianCal? Il nostro team è qui per aiutarti.</p>
+        <div class="help-content">
+          <div class="help-card">
+            <div class="help-icon">📧</div>
+            <h3>Email di Supporto</h3>
+            <p>Scrivici per qualsiasi domanda, suggerimento o problema tecnico.</p>
+            <a href="mailto:matteo@teothxproject.net" class="help-btn">matteo@teothxproject.net</a>
+          </div>
+          <div class="help-card">
+            <div class="help-icon">🔒</div>
+            <h3>Privacy Policy</h3>
+            <p>Leggi come gestiamo i tuoi dati nel rispetto della tua privacy.</p>
+            <a href="https://teothx.github.io/juliancal-privacy/" class="help-btn secondary">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>teothxproject</h3>
+          <p>Sviluppiamo app utili e intuitive per semplificare il tuo lavoro quotidiano.</p>
+          <p class="domain">teothxproject.net</p>
+        </div>
+        <div class="footer-links">
+          <h4>Link Utili</h4>
+          <ul>
+            <li><a href="#app">L'App</a></li>
+            <li><a href="#features">Funzionalità</a></li>
+            <li><a href="#help">Supporto</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 TeothxProject. Tutti i diritti riservati.</p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
