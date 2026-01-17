@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Privacy Policy di AdLens - Leggi come gestiamo i tuoi dati con Google OAuth">
+    <title>Privacy Policy - AdLens</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary-color: #0B1F2A;
+            --secondary-color: #4A90A4;
+            --background-color: #F6F3EE;
+            --card-bg: #FFFFFF;
+            --text-color: #333333;
+            --text-light: #666666;
+            --border-radius: 12px;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif; line-height: 1.8; color: var(--text-color); background: var(--background-color); padding: 20px; }
+        .container { background: var(--card-bg); padding: 50px; border-radius: var(--border-radius); box-shadow: var(--shadow); max-width: 900px; margin: 0 auto; }
+        .back-link { display: inline-block; margin-bottom: 30px; color: var(--secondary-color); text-decoration: none; font-weight: 500; }
+        .back-link:hover { text-decoration: underline; }
+        h1 { color: var(--primary-color); font-size: 2rem; margin-bottom: 10px; }
+        .date { color: var(--text-light); font-size: 0.9rem; margin-bottom: 30px; }
+        h2 { color: var(--primary-color); font-size: 1.5rem; margin-top: 35px; margin-bottom: 15px; padding-bottom: 8px; border-bottom: 2px solid var(--secondary-color); }
+        h3 { color: var(--primary-color); font-size: 1.2rem; margin-top: 25px; margin-bottom: 10px; }
+        p { margin-bottom: 15px; color: var(--text-light); }
+        ul, ol { margin-left: 25px; margin-bottom: 15px; color: var(--text-light); }
+        li { margin-bottom: 8px; }
+        .highlight { background: rgba(74, 144, 164, 0.1); padding: 20px; border-radius: var(--border-radius); border-left: 5px solid var(--secondary-color); margin: 20px 0; }
+        .warning { background: rgba(246, 166, 35, 0.1); padding: 20px; border-radius: var(--border-radius); border-left: 5px solid #F6A623; margin: 20px 0; }
+        .contact { background: var(--background-color); padding: 25px; border-radius: var(--border-radius); margin: 30px 0; text-align: center; }
+        .contact h2 { margin-top: 0; border-bottom: none; }
+        .contact p { color: var(--text-color); }
+        .lang-switch { display: flex; justify-content: center; gap: 10px; margin-bottom: 30px; }
+        .lang-switch button { padding: 10px 24px; margin: 0 5px; background: var(--secondary-color); color: white; border: none; border-radius: 25px; cursor: pointer; font-size: 0.9rem; font-weight: 600; transition: var(--transition); }
+        .lang-switch button:hover { background: var(--primary-color); transform: translateY(-2px); }
+        .lang-switch button.active { background: var(--primary-color); }
+        .footer { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(0, 0, 0, 0.1); color: var(--text-light); }
+        .lang-it, .lang-en { display: none; }
+        .lang-it.active, .lang-en.active { display: block; }
+        @media (max-width: 600px) {
+            .container { padding: 30px 20px; }
+            h1 { font-size: 1.5rem; }
+            h2 { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Torna al sito</a>
+        <div class="lang-switch">
+            <button onclick="switchLang('it')" class="active" id="btn-it">🇮🇹 Italiano</button>
+            <button onclick="switchLang('en')" id="btn-en">🇺🇸 English</button>
+        </div>
+        
+        <!-- Versione Italiana -->
+        <div class="lang-it active" id="content-it">
+            <h1>Informativa sulla Privacy di AdLens</h1>
+            <p class="date"><strong>Ultimo aggiornamento:</strong> 4 Gennaio 2026</p>
+
+            <h2>Introduzione</h2>
+            <p>Benvenuto in AdLens ("noi", "nostro" o "l'App"). AdLens è un'applicazione che ti consente di monitorare i tuoi ricavi pubblicitari da AdMob in modo semplice e veloce. La tua privacy è importante per noi. Questa Informativa sulla Privacy spiega quali informazioni raccogliamo, come le utilizziamo e quali sono i tuoi diritti.</p>
+            <p class="highlight">Utilizzando AdLens, accetti le pratiche descritte in questa Informativa sulla Privacy.</p>
+
+            <h2>Dati Raccolti</h2>
+            
+            <h3>1. Dati di Accesso Google</h3>
+            <p>AdLens utilizza l'autenticazione Google (OAuth 2.0) per accedere ai tuoi dati AdMob. Quando accedi, raccogliamo:</p>
+            <ul>
+                <li><strong>ID utente Google:</strong> Per identificare il tuo account</li>
+                <li><strong>Token di accesso:</strong> Per accedere alle API di AdMob per tuo conto</li>
+            </ul>
+            <div class="warning">
+                <strong>Importante:</strong> Non archiviamo le tue credenziali Google. I token di accesso vengono utilizzati solo per recuperare i dati da AdMob durante la sessione attiva.
+            </div>
+
+            <h3>2. Dati AdMob</h3>
+            <p>AdLens accede ai seguenti dati dal tuo account AdMob:</p>
+            <ul>
+                <li><strong>Dati sulle performance:</strong> Ricavi stimati, impressioni, clic, eCPM, CTR</li>
+                <li><strong>Dati geografici:</strong> Paese di origine del traffico</li>
+                <li><strong>Dati temporali:</strong> Andamento dei ricavi nel tempo</li>
+                <li><strong>Informazioni sulle app:</strong> Nome dell'app, piattaforma (Android/iOS)</li>
+            </ul>
+
+            <h3>3. Dati Locali</h3>
+            <p>AdLens memorizza localmente sul tuo dispositivo:</p>
+            <ul>
+                <li><strong>Dati in cache:</strong> Per migliorare le prestazioni dell'app</li>
+                <li><strong>Preferenze:</strong> Le tue impostazioni scelte</li>
+                <li><strong>Cronologia sessioni:</strong> Solo per mantenere la sessione attiva</li>
+            </ul>
+            <p><strong>Questi dati non vengono trasmessi ai nostri server e restano solo sul tuo dispositivo.</strong></p>
+
+            <h2>Come Utilizziamo i Dati</h2>
+            <p>I dati raccolti vengono utilizzati esclusivamente per:</p>
+            <ol style="margin-left: 20px;">
+                <li><strong>Visualizzare i tuoi ricavi:</strong> Mostrarti i dati di performance del tuo account AdMob</li>
+                <li><strong>Analisi aggregate:</strong> Creare grafici e statistiche sui tuoi ricavi</li>
+                <li><strong>Migliorare l'esperienza:</strong> Ottimizzare l'interfaccia e le funzionalità dell'app</li>
+                <li><strong>Debug e risoluzione problemi:</strong> Correggere eventuali errori nell'app</li>
+            </ol>
+
+            <h2>Condivisione dei Dati</h2>
+            <p class="highlight"><strong>Non vendiamo i tuoi dati personali a terze parti.</strong></p>
+            <p>I tuoi dati AdMob vengono utilizzati esclusivamente all'interno dell'app e non vengono condivisi con nessun altro servizio, tranne:</p>
+            <ul>
+                <li><strong>Google AdMob:</strong> I dati provengono dalle API ufficiali di Google</li>
+                <li><strong>Servizi di analytics dell'app:</strong> In forma anonimizzata per migliorare l'app (opzionale, disattivabile)</li>
+            </ul>
+
+            <h2>Sicurezza dei Dati</h2>
+            <p>Adottiamo misure tecniche e organizzative appropriate per proteggere i tuoi dati:</p>
+            <ul>
+                <li><strong>Crittografia:</strong> I dati in transito sono protetti con HTTPS</li>
+                <li><strong>Nessun archivio remoto:</strong> I tuoi dati sensibili non vengono mai salvati sui nostri server</li>
+                <li><strong>Token temporanei:</strong> I token di accesso vengono utilizzati solo durante la sessione</li>
+                <li><strong>Autenticazione sicura:</strong> Utilizziamo OAuth 2.0 di Google per l'accesso</li>
+            </ul>
+
+            <h2>Conservazione dei Dati</h2>
+            <ul>
+                <li><strong>Dati locali:</strong> Rimangono sul tuo dispositivo finché non cancelli la cache o disinstalli l'app</li>
+                <li><strong>Dati di accesso:</strong> I token vengono revocati quando esci dall'app</li>
+                <li><strong>Analytics anonimizzati:</strong> Possono essere conservati per migliorare l'app</li>
+            </ul>
+
+            <h2>I Tuoi Diritti</h2>
+            <p>Hai i seguenti diritti sui tuoi dati:</p>
+            <ol style="margin-left: 20px;">
+                <li><strong>Accesso:</strong> Puoi richiedere informazioni sui dati che trattiamo</li>
+                <li><strong>Cancellazione:</strong> Puoi richiedere la rimozione dei tuoi dati</li>
+                <li><strong>Portabilità:</strong> Puoi richiedere una copia dei tuoi dati</li>
+                <li><strong>Revoca consenso:</strong> Puoi revocare l'accesso in qualsiasi momento</li>
+            </ol>
+
+            <h2>Minori</h2>
+            <p>AdLens non è destinata a minori di 13 anni. Non raccogliamo intenzionalmente dati personali da minori.</p>
+
+            <h2>Modifiche all'Informativa</h2>
+            <p>Potremo aggiornare questa Informativa sulla Privacy di tanto in tanto. Ti consigliamo di controllare questa pagina periodicamente per eventuali modifiche.</p>
+
+            <div class="contact">
+                <h2>Contatti</h2>
+                <p>Per domande su questa Informativa sulla Privacy o sulle nostre pratiche, contattaci:</p>
+                <p><strong>AdLens</strong></p>
+                <p>Email: adlens@teothxproject.net</p>
+            </div>
+
+            <p class="footer">© 2026 AdLens. Tutti i diritti riservati.</p>
+        </div>
+        
+        <!-- English Version -->
+        <div class="lang-en" id="content-en">
+            <h1>AdLens Privacy Policy</h1>
+            <p class="date"><strong>Last updated:</strong> January 4, 2026</p>
+
+            <h2>Introduction</h2>
+            <p>Welcome to AdLens ("we", "our", or "the App"). AdLens is an application that allows you to monitor your AdMob advertising revenue simply and quickly. Your privacy is important to us. This Privacy Policy explains what information we collect, how we use it, and what your rights are.</p>
+            <p class="highlight">By using AdLens, you accept the practices described in this Privacy Policy.</p>
+
+            <h2>Data Collected</h2>
+            
+            <h3>1. Google Access Data</h3>
+            <p>AdLens uses Google authentication (OAuth 2.0) to access your AdMob data. When you sign in, we collect:</p>
+            <ul>
+                <li><strong>Google User ID:</strong> To identify your account</li>
+                <li><strong>Access Token:</strong> To access AdMob APIs on your behalf</li>
+            </ul>
+            <div class="warning">
+                <strong>Important:</strong> We do not store your Google credentials. Access tokens are used only to retrieve data from AdMob during the active session.
+            </div>
+
+            <h3>2. AdMob Data</h3>
+            <p>AdLens accesses the following data from your AdMob account:</p>
+            <ul>
+                <li><strong>Performance data:</strong> Estimated earnings, impressions, clicks, eCPM, CTR</li>
+                <li><strong>Geographic data:</strong> Country of traffic origin</li>
+                <li><strong>Temporal data:</strong> Revenue trends over time</li>
+                <li><strong>App information:</strong> App name, platform (Android/iOS)</li>
+            </ul>
+
+            <h3>3. Local Data</h3>
+            <p>AdLens stores locally on your device:</p>
+            <ul>
+                <li><strong>Cached data:</strong> To improve app performance</li>
+                <li><strong>Preferences:</strong> Your chosen settings</li>
+                <li><strong>Session history:</strong> Only to keep the session active</li>
+            </ul>
+            <p><strong>This data is not transmitted to our servers and remains only on your device.</strong></p>
+
+            <h2>How We Use Your Data</h2>
+            <p>The collected data is used exclusively for:</p>
+            <ol style="margin-left: 20px;">
+                <li><strong>Display your revenue:</strong> Show you your AdMob account performance data</li>
+                <li><strong>Aggregate analysis:</strong> Create charts and statistics on your revenue</li>
+                <li><strong>Improve experience:</strong> Optimize the app interface and features</li>
+                <li><strong>Debug and troubleshoot:</strong> Fix any errors in the app</li>
+            </ol>
+
+            <h2>Data Sharing</h2>
+            <p class="highlight"><strong>We do not sell your personal data to third parties.</strong></p>
+            <p>Your AdMob data is used exclusively within the app and is not shared with any other service, except:</p>
+            <ul>
+                <li><strong>Google AdMob:</strong> Data comes from official Google APIs</li>
+                <li><strong>App analytics services:</strong> In anonymized form to improve the app (optional, can be disabled)</li>
+            </ul>
+
+            <h2>Data Security</h2>
+            <p>We employ appropriate technical and organizational measures to protect your data:</p>
+            <ul>
+                <li><strong>Encryption:</strong> Data in transit is protected with HTTPS</li>
+                <li><strong>No remote storage:</strong> Your sensitive data is never saved on our servers</li>
+                <li><strong>Temporary tokens:</strong> Access tokens are used only during the session</li>
+                <li><strong>Secure authentication:</strong> We use Google's OAuth 2.0 for sign-in</li>
+            </ul>
+
+            <h2>Data Retention</h2>
+            <ul>
+                <li><strong>Local data:</strong> Remains on your device until you clear cache or uninstall the app</li>
+                <li><strong>Access tokens:</strong> Revoked when you sign out of the app</li>
+                <li><strong>Anonymized analytics:</strong> May be retained to improve the app</li>
+            </ul>
+
+            <h2>Your Rights</h2>
+            <p>You have the following rights regarding your data:</p>
+            <ol style="margin-left: 20px;">
+                <li><strong>Access:</strong> You can request information about the data we process</li>
+                <li><strong>Deletion:</strong> You can request removal of your data</li>
+                <li><strong>Portability:</strong> You can request a copy of your data</li>
+                <li><strong>Withdraw consent:</strong> You can revoke access at any time</li>
+            </ol>
+
+            <h2>Children</h2>
+            <p>AdLens is not intended for children under 13. We do not knowingly collect personal data from children.</p>
+
+            <h2>Policy Changes</h2>
+            <p>We may update this Privacy Policy from time to time. We encourage you to check this page periodically for any changes.</p>
+
+            <div class="contact">
+                <h2>Contacts</h2>
+                <p>For questions about this Privacy Policy or our practices, contact us:</p>
+                <p><strong>AdLens</strong></p>
+                <p>Email: adlens@teothxproject.net</p>
+            </div>
+
+            <p class="footer">© 2026 AdLens. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        function switchLang(lang) {
+            // Nascondi tutto
+            document.getElementById('content-it').classList.remove('active');
+            document.getElementById('content-en').classList.remove('active');
+            document.getElementById('btn-it').classList.remove('active');
+            document.getElementById('btn-en').classList.remove('active');
+            
+            // Mostra la lingua selezionata
+            document.getElementById('content-' + lang).classList.add('active');
+            document.getElementById('btn-' + lang).classList.add('active');
+            
+            // Aggiorna attributo lang del body
+            document.documentElement.lang = lang;
+        }
+    </script>
+</body>
+</html>
