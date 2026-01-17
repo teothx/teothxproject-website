@@ -201,6 +201,8 @@ nav {
   border-radius: 22px;
   margin-bottom: 20px;
   box-shadow: var(--shadow);
+  object-fit: contain;
+  background: var(--background-color);
 }
 
 .app-card h3 {
@@ -247,6 +249,9 @@ nav {
   border-radius: 28px;
   box-shadow: var(--shadow);
   flex-shrink: 0;
+  object-fit: contain;
+  background: var(--background-color);
+  padding: 10px;
 }
 
 .app-header-content {
