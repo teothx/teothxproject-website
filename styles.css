@@ -154,6 +154,21 @@ nav {
   box-shadow: 0 6px 25px rgba(74, 144, 164, 0.4);
 }
 
+.privacy-link-inline {
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+
+.privacy-link-inline a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.privacy-link-inline a:hover {
+  text-decoration: underline;
+}
+
 /* Apps Showcase */
 .apps-showcase {
   padding: 80px 20px;
